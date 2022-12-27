@@ -1,0 +1,15 @@
+.main-wrapper-header{
+    background-color: var(--color-background-container);
+    left: 0;
+    padding: 0 var(--spacing-three-x);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 100;
+    border-bottom: 1px solid var(--color-border-faint);
+}
+
+:root{
+  --color-background-container:rgb(255 102 194);
+  --artdeco-reset-link-color-blue9: red;
+}
