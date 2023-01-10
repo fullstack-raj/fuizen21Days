@@ -1,0 +1,28 @@
+.form {
+    padding: 1rem; 
+    &_header {
+        h1 {
+            color: #222;
+        }
+    }
+    &_container { 
+        gap: 1rem;  
+        display: flex;
+        flex-direction: column;
+        .rowThree{
+            flex-flow: wrap;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));         
+        }
+    }
+    &_footer {
+        padding-top: 1rem;
+    }
+}
+
+
+// custom styles for inputs
+label{
+    text-transform: capitalize;
+}

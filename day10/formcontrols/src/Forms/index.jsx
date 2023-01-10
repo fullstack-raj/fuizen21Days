@@ -3,7 +3,8 @@ import {useForm} from 'react-hook-form';
 
 const Forms = () => {
   //const { register, handleSubmit, watch, formState: { errors} } = useForm({mode:'onSubmit'});
-  const profile = useForm();
+  const profile = useForm({mode:'onBlur'});
+   
 
   console.log(profile.watch("lastname"));
   console.log(profile.formState.errors)
