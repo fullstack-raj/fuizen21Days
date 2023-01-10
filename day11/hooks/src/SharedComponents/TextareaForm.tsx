@@ -13,23 +13,7 @@ interface ITextareaFormProps {
   control?: Control<any>;
   placeholder?: string;
 }
-
-/**
- * TextareaForm
- * @returns {React.ReactElement}
- */
-
-/**
- * @typedef {object}
- * @property {string} name
- * @property {string} label
- * @property { boolean | undefined} isRequired
- * @property { boolean | undefined} isDisabled
- * @property { boolean | undefined} isReadyOnly
- * @property {string | undefined} defaultValue
- * @property {number | undefined} rows
- */
-
+ 
 const TextareaForm = ({
   name,
   label,
@@ -39,8 +23,7 @@ const TextareaForm = ({
   defaultValue,
   rows,
   placeholder
-}: // control,
-//register,
+}:  
 ITextareaFormProps) => {
   const { control, register } = useFormContext();
 

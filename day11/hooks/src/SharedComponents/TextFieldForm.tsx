@@ -13,22 +13,7 @@ interface ITextFieldFormProps {
   register?: any;
   placeholder?: string;
 }
-
-/**
- * TextFieldForm
- * @returns {React.ReactElement}
- */
-
-/**
- * @typedef {object}
- * @property {string} name 
- * @property {string} label 
- * @property {boolean | undefined} isRequired 
- * @property {boolean | undefined} isdisabled 
- * @property {boolean | undefined} isReadyOnly 
- * @property {string | undefined} defaultValue 
- */
-
+ 
 const TextFieldForm = ({
   name,
   label,
@@ -56,8 +41,7 @@ ITextFieldFormProps) => {
                 className={
                   isRequired ? (error ? "errorGroup" : "errorGroupStar") : ""
                 }
-              >
-                <input {...register(name)} hidden defaultValue={defaultValue} />
+              > 
                 <TextField
                   label={label}
                   disabled={isdisabled}
