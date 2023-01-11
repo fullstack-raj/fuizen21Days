@@ -31,7 +31,8 @@ export const EMPLOYEE_FORM_ELEMENTS = [
             },
             {
                 type: "TextFieldForm",
-                name: "dateofbirth",
+                name: "0",
+                typeOf:'number',
                 label: "date of birth",
                 isRequired: false,
             },

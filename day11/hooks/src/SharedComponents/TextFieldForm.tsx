@@ -3,7 +3,8 @@ import { Label, TextField } from "@fluentui/react";
 import { Control, Controller, useFormContext } from "react-hook-form";
 
 interface ITextFieldFormProps {
-  name: string;
+  name: string | number | any;
+  typeOf?: string | number;
   label: string;
   isRequired?: boolean;
   isdisabled?: boolean;
@@ -21,8 +22,8 @@ const TextFieldForm = ({
   isdisabled,
   isReadyOnly,
   defaultValue,
-  placeholder
-  
+  placeholder,
+  typeOf
 }: //register,
 ITextFieldFormProps) => {
   const { control, register } = useFormContext();
@@ -43,6 +44,7 @@ ITextFieldFormProps) => {
                 }
               > 
                 <TextField
+                  type={typeOf === 'number'?"number": 'text'}
                   label={label}
                   disabled={isdisabled}
                   readOnly={isReadyOnly}
