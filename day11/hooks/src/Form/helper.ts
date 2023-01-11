@@ -17,22 +17,65 @@ job title, department, start date, salary
 
 */
 
+export const NewEMPLOYEE_FORM_ELEMENTS = [
+    {
+        type: "TextFieldForm",
+        name: "name",
+        label: "name",
+        isRequired: true,
+    },
+    {
+        type: "TextFieldForm",
+        name: "0",
+        typeOf: 'number',
+        label: "date of birth",
+        isRequired: false,
+    },
+    {
+        type: "TextFieldForm",
+        name: "phonenumber",
+        label: "phone number",
+        isRequired: false,
+    },
+
+    {
+        type: "TextFieldForm",
+        name: "email",
+        label: "email",
+        isRequired: false,
+    },
+    {
+        type: "TextFieldForm",
+        name: "jobtitle",
+        label: "job title",
+        isRequired: false,
+    },
+    {
+        type: "DropdownForm",
+        name: "department",
+        label: "department",
+        isRequired: false,
+        options: DEPARTMENT,
+        placeholder: "Select",
+    }
+];
+
 export const EMPLOYEE_FORM_ELEMENTS = [
     {
         row: 0,
-        className: "rowThree",
+        className: "rowTwo",
         controls: [
 
             {
                 type: "TextFieldForm",
                 name: "name",
                 label: "name",
-                isRequired: false,
+                isRequired: true,
             },
             {
                 type: "TextFieldForm",
                 name: "0",
-                typeOf:'number',
+                typeOf: 'number',
                 label: "date of birth",
                 isRequired: false,
             },
@@ -42,24 +85,24 @@ export const EMPLOYEE_FORM_ELEMENTS = [
                 label: "phone number",
                 isRequired: false,
             }
-             
+
         ],
     },
     {
         row: 0,
         className: "rowThree",
-        controls: [ 
+        controls: [
             {
                 type: "TextFieldForm",
                 name: "email",
                 label: "email",
                 isRequired: false,
-            }, 
+            },
             {
-                type: "TextFieldForm", 
+                type: "TextFieldForm",
                 name: "jobtitle",
                 label: "job title",
-                isRequired: false, 
+                isRequired: false,
             },
             {
                 type: "DropdownForm",
@@ -67,7 +110,7 @@ export const EMPLOYEE_FORM_ELEMENTS = [
                 label: "department",
                 isRequired: false,
                 options: DEPARTMENT,
-                placeholder: "Select",  
+                placeholder: "Select",
             },
         ],
     }

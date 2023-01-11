@@ -39,7 +39,7 @@ ITextareaFormProps) => {
                 isRequired ? (error ? "errorGroup" : "errorGroupStar") : ""
               }
             >
-              <input {...register(name)} hidden />
+              {/* <input {...register(name)} hidden /> */}
               <TextField
                 {...field}
                 label={label}

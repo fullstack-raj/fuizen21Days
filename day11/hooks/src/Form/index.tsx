@@ -4,16 +4,18 @@ import { useEffect } from "react";
 import {
     FormProvider,
     SubmitHandler,
-    useForm, 
+    useForm,
 } from "react-hook-form";
+
 import { PrimaryButton } from "@fluentui/react";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import DynamicFieldLoad from "../SharedComponents/DynamicFieldLoad";
-import { EMPLOYEE_FORM_ELEMENTS } from "./helper";
+import { EMPLOYEE_FORM_ELEMENTS, NewEMPLOYEE_FORM_ELEMENTS } from "./helper";
 import './form.scss';
+import TextFieldForm from "../SharedComponents/TextFieldForm";
 
 const EmployeeForm = () => {
 
@@ -28,6 +30,7 @@ const EmployeeForm = () => {
 
     // schema declaration validation
     const EmployeeSchema: yup.SchemaOf<IEmployeeData> = yup.object().shape({
+        role: yup.string().required(),
         name: yup.string().required().min(4).max(10),
         dateofbirth: yup.string(),
         phonenumber: yup.string(),
@@ -45,6 +48,7 @@ const EmployeeForm = () => {
     });
 
     const [submittedData, setSubmitedData] = React.useState();
+
     const EmployeeFormSubmit: SubmitHandler<any> = async (
         data: any,
     ) => {
@@ -60,7 +64,7 @@ const EmployeeForm = () => {
     const getAdditionalProps = (item: any) => {
         item.control = EmployeeFormMethods.control;
         item.setValue = EmployeeFormMethods.setValue;
-        item.register = EmployeeFormMethods.register; 
+        item.register = EmployeeFormMethods.register;
         return item;
     };
 
@@ -74,6 +78,12 @@ const EmployeeForm = () => {
                 <form onSubmit={EmployeeFormMethods.handleSubmit(EmployeeFormSubmit)}>
                     <div className="form_container">
 
+                        <TextFieldForm
+                            name="role"
+                            label="Role"
+                        />
+ 
+
                         {EMPLOYEE_FORM_ELEMENTS?.map((rows: any) => {
                             return (
                                 <div className={`rowThree ${rows.className}`}>
@@ -85,11 +95,16 @@ const EmployeeForm = () => {
                             );
                         })}
 
+                        {/* {NewEMPLOYEE_FORM_ELEMENTS?.map((item: any) => {
+                            const updatedItem = getAdditionalProps(item);
+                            return DynamicFieldLoad(item.type, updatedItem);
+                        })} */}
+
                     </div>
                     <div className="form_footer">
                         <PrimaryButton type="submit"
-                            onClick={EmployeeFormMethods.handleSubmit(EmployeeFormSubmit)}
-                            disabled={!EmployeeFormMethods.formState.isValid}
+                        // onClick={EmployeeFormMethods.handleSubmit(EmployeeFormSubmit)}
+
                         >Submit</PrimaryButton>
                     </div>
                 </form>

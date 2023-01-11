@@ -44,7 +44,7 @@ ITextFieldFormProps) => {
                 }
               > 
                 <TextField
-                  type={typeOf === 'number'?"number": 'text'}
+                  type={typeOf === 'number'?"number":'text'}
                   label={label}
                   disabled={isdisabled}
                   readOnly={isReadyOnly}
