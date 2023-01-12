@@ -5,17 +5,6 @@ export const DEPARTMENT: IChoiceGroupOption[] = [
     { key: "Health", text: "Health" },
 ];
 
-/*  
-Personal information
-name, date of birth, address, phone number, email address
-
-Emergency contact information: 
-name, relationship, phone number
-
-Employment information
-job title, department, start date, salary
-
-*/
 
 export const NewEMPLOYEE_FORM_ELEMENTS = [
     {
@@ -74,8 +63,7 @@ export const EMPLOYEE_FORM_ELEMENTS = [
             },
             {
                 type: "TextFieldForm",
-                name: "0",
-                typeOf: 'number',
+                name: "dateofbirth", 
                 label: "date of birth",
                 isRequired: false,
             },
@@ -83,6 +71,12 @@ export const EMPLOYEE_FORM_ELEMENTS = [
                 type: "TextFieldForm",
                 name: "phonenumber",
                 label: "phone number",
+                isRequired: false,
+            },
+            {
+                type: "TextFieldForm",
+                name: "companyname",
+                label: "companyname",
                 isRequired: false,
             }
 
